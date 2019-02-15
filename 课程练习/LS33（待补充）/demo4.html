@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*
+	　  从字面上看，yield关键字确实在createlterator()函数内部，但是它与return关键字一样，二者都不能穿透函数边界。嵌套函数中的return语句不能用作外部函数的返回语句，而此处嵌套函数中的yield语句会导致程序抛出语法错误。
+	*/
+	function *createIterator(items) {
+	    items.forEach(function(item) {
+	        // 语法错误
+	        // yield关键字只可在生成器内部使用，
+	        // 在其他地方使用会导致程序抛出错误。
+	        yield item + 1;
+	    });
+	}
+	let iterator = createIterator([1, 2, 3]);
+	iterator.next();
+</script>
+</html>

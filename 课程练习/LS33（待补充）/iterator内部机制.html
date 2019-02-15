@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function createIterator(items) {
+		var i = 0;
+		return {
+			next: function() {
+				return i >= items.length ? {
+					"done": true,
+					"value": undefined
+				} :  {
+					"done": false,
+					"value": items[i++]
+				};
+			}
+		}
+	}
+	var myiterator = createIterator([1,2,3]);
+	console.log(myiterator.next());
+	console.log(myiterator.next());
+	console.log(myiterator.next());
+	console.log(myiterator.next());
+
+
+
+</script>
+</html>

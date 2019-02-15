@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var someString = "hi";
+	typeof someString[Symbol.iterator]
+	// "function"
+
+	var iterator = someString[Symbol.iterator]();
+
+	console.log(iterator.next());  // { value: "h", done: false }
+	console.log(iterator.next());  // { value: "i", done: false }
+	console.log(iterator.next());  // { value: undefined, done: true }
+
+	for(let i of someString) {
+		console.log(i);
+	}
+</script>
+</html>
